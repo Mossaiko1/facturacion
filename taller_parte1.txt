@@ -1,0 +1,88 @@
+1. ¿Qué es Node JS?
+
+Node.js es un entorno de ejecución para JavaScript que permite ejecutar código JavaScript en el servidor. Está construido sobre el motor JavaScript V8 de Google Chrome y permite crear aplicaciones escalables de red y en tiempo real.
+
+2. ¿Cómo se crea un proyecto en Node?
+
+Instala Node.js desde nodejs.org.
+
+Inicializa el proyecto:
+crear carpeta: mi-proyecto
+Entrar en la carpeta: mi-proyecto
+inicializar proyecto: npm init -y
+
+3. ¿Para qué es el package.json?
+El package.json es un archivo que contiene la configuración del proyecto Node.js. Incluye detalles como el nombre del proyecto, la versión, la descripción, los scripts, las dependencias y la información del autor. Es esencial para gestionar las dependencias y scripts del proyecto.
+
+
+4. ¿Qué es Express y para qué se utiliza?
+Express es un framework para Node.js que simplifica la creación de aplicaciones web y APIs. Proporciona una serie de características y herramientas para manejar rutas, middleware, peticiones HTTP, y más, facilitando el desarrollo de aplicaciones web robustas y eficientes.
+
+5. Escriba el código de un servidor básico en Express.
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
+6. ¿Qué es una API?
+Una API (Application Programming Interface) es un conjunto de definiciones y protocolos que permiten que una aplicación se comunique con otra. Las APIs facilitan la interacción entre diferentes sistemas de software y permiten que aplicaciones diversas compartan datos y funcionalidades.
+
+7. ¿Cuáles son los métodos HTTP?
+Los métodos HTTP más comunes son:
+
+GET: Recupera datos del servidor.
+POST: Envía datos al servidor para crear un nuevo recurso.
+PUT: Actualiza un recurso existente en el servidor.
+DELETE: Elimina un recurso en el servidor.
+PATCH: Aplica modificaciones parciales a un recurso.
+OPTIONS: Describe las opciones de comunicación para el recurso de destino.  
+
+8. ¿Qué es API REST?
+Una API REST (Representational State Transfer) es un estilo arquitectónico para diseñar servicios web. Utiliza métodos HTTP y se basa en recursos (como usuarios, productos, etc.) que se pueden manipular a través de URLs. Las APIs RESTful son conocidas por ser escalables y fáciles de mantener.
+
+¿Cómo se instala Express en un proyecto Node.js?
+
+Desde la consola ponemos el siguiente comando: npm install express
+
+10. Crear los métodos POST y PUT para una API REST. ¿Cómo testear su funcionamiento rápidamente?
+Para testear los métodos POST y PUT, puedes utilizar herramientas como Postman o ThunderClient.
+
+11. Crear una API que devuelva el promedio de temperaturas de un array.
+Para crear una API que devuelva el promedio de temperaturas de un array, elige el método GET.
+
+12. Responda Falso o Verdadero:
+JSON es un lenguaje de programación para crear APIs. (Falso)
+Express es un Framework para Node.js.(Verdadero)
+JSON es un formato empleado para intercambiar datos entre lenguajes de programación. (Verdadero)
+
+13. Trabajar con la API de medicamentos:
+a. Teste el método GET de la API.
+
+const axios = require('axios');
+
+axios.get('https://www.datos.gov.co/resource/sdmr-tfmf.json')
+  .then(response => {
+    console.log(Array.isArray(response.data) ? 'Array de objetos' : 'Array simple');
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+  Respuesta: Es un array de objetos.
+
+b. Insertar datos en la API de medicamentos:
+No puedes insertar datos en la API de datos.gov.co ya que es una API pública de solo lectura.
+
+c. Análisis del formato de cantidad_solicitada:
+Si cantidad_solicitada no está en un formato numérico, necesitarás convertirlo a número para realizar cálculos.
+
+d. Listar valores en minúsculas:
+con un metodo llamado: toLowerCase()
